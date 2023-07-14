@@ -29,7 +29,7 @@ const LaptopScene = (props) => {
             />
 
             {/* LaptopScreen */}
-           <mesh
+            <mesh
                 ref={screenRef}
                 geometry={nodes.LaptopScreen.geometry}
                 position={nodes.LaptopScreen.position}
