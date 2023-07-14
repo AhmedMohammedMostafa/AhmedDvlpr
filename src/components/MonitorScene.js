@@ -3,8 +3,27 @@ import { Html } from '@react-three/drei';
 import { isBrowser } from 'react-device-detect';
 import useInteractions from '../utils/stores/useInteractions';
 import ProjectsMonitor from './HTML/ProjectsMonitor';
+import { useProgress } from '@react-three/drei';
+
 
 const MonitorScene = (props) => {
+    
+    
+    
+    const { total, progress } = useProgress();
+    const state = useInteractions((state) => state);
+
+    useEffect(() => {
+        if (total === 7 && progress === 100) {
+             console.log('🚀 Ready');
+             console.log('🚀', total, progress);
+            state.loaded();
+        }
+    }, [total, progress]);
+                                 
+
+
+    
     const nodes = props.nodes;
     const bakedMaterial = props.material;
     const screenMaterial = props.screenMaterial;
