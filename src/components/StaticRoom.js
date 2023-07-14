@@ -8,14 +8,14 @@ import MonitorScene from './MonitorScene';
 import Lights from './Lights/Lights';
 import TabletScene from './TabletScene';
 import PhoneScene from './PhoneScene';
-import CorkBoardScene from './CorkBoardScene';
 
 const StaticRoom = () => {
     /**
      * Nodes
      */
     const { nodes } = useGLTF('./assets/Room.glb');
-    // console.log('🚀 ~ StaticRoom ~ nodes:', nodes);
+    
+    console.log('🚀 ~ StaticRoom ~ nodes:', nodes);
 
     /**
      * Textures
@@ -40,7 +40,6 @@ const StaticRoom = () => {
      */
     const chairRef = useRef();
     const plantRef = useRef();
-    const ahmedRef = useRef();
 
 
     /**
@@ -87,14 +86,10 @@ const StaticRoom = () => {
                     material={bakedMaterial}
                 />
 
-<mesh
-                    ref={ahmedRef}
-                    geometry={nodes.Ahmed.geometry}
-                    position={nodes.Ahmed.position}
-                    rotation={nodes.Ahmed.rotation}
-                    scale={nodes.Ahmed.scale}
-                />
-                
+
+
+       
+
                 {/* Smoke */}
                 <Smoke />
 
@@ -135,7 +130,6 @@ const StaticRoom = () => {
 
 
                 {/* CorkBoard => Experiences */}
-                <CorkBoardScene nodes={nodes} material={bakedMaterial} />
             </group>
         </Center>
     );
