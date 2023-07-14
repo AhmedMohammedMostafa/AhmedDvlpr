@@ -41,7 +41,7 @@ const ContactsPhone = () => {
         <div className="phone-container">
             {/* CV */}
             <div
-                onClick={() => goToUrl('./assets/downloads/CV-Davide-Vignozzi.pdf')}
+                onClick={() => goToUrl('./assets/downloads/AhmedDvlpr Resume.pdf')}
                 className="phone-notification"
             >
                 <div className="phone-notification-icon">
