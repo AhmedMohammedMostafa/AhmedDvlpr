@@ -84,7 +84,10 @@ const CameraScene = () => {
         target: new THREE.Vector3(-0.076, 0.505, 1)
     };
     // * Education
-    
+    const educationSettings = {
+        position: new THREE.Vector3(-0.076, 1.1, 0.6),
+        target: new THREE.Vector3(-0.076, 1.1, 1.375)
+    };
     // * Experiences
     const experiencesSettings = {
         position: new THREE.Vector3(-1.05, 1.0675, 0.675),
@@ -272,7 +275,32 @@ const CameraScene = () => {
                 );
                 break;
 
+            case 'education':
+                animateCamera(
+                    educationSettings.position,
+                    educationSettings.target,
+                    animationsTime,
+                    'sine'
+                );
+                break;
 
+            case 'experiences':
+                animateCamera(
+                    experiencesSettings.position,
+                    experiencesSettings.target,
+                    animationsTime,
+                    'sine'
+                );
+                break;
+
+            case 'everis':
+                animateCamera(
+                    everisSettings.position,
+                    everisSettings.target,
+                    animationsTime,
+                    'sine'
+                );
+                break;
 
             case 'contacts':
                 animateCamera(
