@@ -10,9 +10,10 @@ const LoadingLaptop = () => {
         if (state.phase === 'loaded') {
             setIsStarted(true);
         }
-    }, [state.phase]);
+    }, [state.phase === 'loaded']);
 
     return (
+        isStarted && (
             <section id="laptop" className="centered no-pointer-events no-user-select">
                 <div className="window">
                     <div className="window--tob-bar">
@@ -31,9 +32,7 @@ const LoadingLaptop = () => {
                         <div className="loading-typing-container fonted">
                             <TypeAnimation
                                 sequence={[
-                                    `Hi, I'm Ahmed and I specialize in backend and APIs, with a passion for exploring frontend development. Welcome to my portfolio!`,
-                                    1000,
-                                    "Hi, I'm Ahmed and I specialize in backend and APIs, with a passion for exploring frontend development. Also have passion for Cybersecurity!",
+                                    `Hi, I'm Ahmed Mostafa a Full Stack Web Developer, I love creating websites.`,
                                     1000,
                                     () => state.start()
                                 ]}
@@ -45,7 +44,7 @@ const LoadingLaptop = () => {
                     </div>
                 </div>
             </section>
-        
+        )
     );
 };
 
