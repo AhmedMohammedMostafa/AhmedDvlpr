@@ -33,9 +33,9 @@ const LoadingLaptop = () => {
                             <TypeAnimation
                                 sequence={[
                                     `Hi, I'm Ahmed Mostafa a Full Stack Web Developer, I love creating websites.`,
-                                    1000,
-                                    "Welcome to my portfolio.",
-                                    1000,
+                                    500,
+                                    "Hi, I'm Ahmed Mostafa a Full Stack Web Developer, Welcome to my portfolio..",
+                                    500,
                                     () => state.start()
                                 ]}
                                 style={{
