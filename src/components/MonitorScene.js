@@ -4,6 +4,7 @@ import { isBrowser } from 'react-device-detect';
 import useInteractions from '../utils/stores/useInteractions';
 import ProjectsMonitor from './HTML/ProjectsMonitor';
 import { useProgress } from '@react-three/drei';
+import { useEffect } from 'react';
 
 
 const MonitorScene = (props) => {
