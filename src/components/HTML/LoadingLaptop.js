@@ -34,6 +34,8 @@ const LoadingLaptop = () => {
                                 sequence={[
                                     `Hi, I'm Ahmed Mostafa a Full Stack Web Developer, I love creating websites.`,
                                     1000,
+                                    "Welcome to my portfolio.",
+                                    1000,
                                     () => state.start()
                                 ]}
                                 style={{
@@ -45,7 +47,7 @@ const LoadingLaptop = () => {
                 </div>
             </section>
         )
-    );
+    )
 };
 
 export default LoadingLaptop;
