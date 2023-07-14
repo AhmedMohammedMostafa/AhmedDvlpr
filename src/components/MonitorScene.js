@@ -14,7 +14,7 @@ const MonitorScene = (props) => {
     const state = useInteractions((state) => state);
 
     useEffect(() => {
-        if (total === 7 && progress === 100) {
+        if (total === 4 && progress === 100) {
              console.log('🚀 Ready');
              console.log('🚀', total, progress);
             state.loaded();
