@@ -13,7 +13,6 @@ const LoadingLaptop = () => {
     }, [state.phase]);
 
     return (
-        isStarted && (
             <section id="laptop" className="centered no-pointer-events no-user-select">
                 <div className="window">
                     <div className="window--tob-bar">
@@ -46,7 +45,7 @@ const LoadingLaptop = () => {
                     </div>
                 </div>
             </section>
-        )
+        
     );
 };
 
