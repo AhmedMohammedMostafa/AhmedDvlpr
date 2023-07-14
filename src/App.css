@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+button {
+    border: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Font */
+.fonted {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Colors */
+.accented {
+    color: #f44a02;
+}
+.bg-accented {
+    background-color: #f44a02;
+}
+.bg-red {
+    background-color: #ff605c;
+}
+.bg-orange {
+    background-color: #ffbd44;
+}
+.bg-green {
+    background-color: #00ca4e;
+}
+.bg-blue {
+    background-color: #007aff;
+}
+.bg-secondary {
+    background-color: #dcdcdc;
+}
+
+/* User */
+.no-pointer-events {
+    pointer-events: none;
+}
+.no-user-select {
+    user-select: none;
+}
+.pointer {
+    cursor: pointer;
+}
+.zoomIn {
+    cursor: zoom-in;
+}
+
+html,
+body,
+#root {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: ivory;
+}
+
+div::-webkit-scrollbar {
+    display: none;
+}
+
+/*
+* ---------- Pending
+*/
+.pending {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #fff;
+    border-bottom-color: #f44a02;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*
+* ----------  Mobile Modal
+*/
+.modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.35);
+}
+.modal {
+    width: 75%;
+    height: 25%;
+    background-color: #f0f0f0;
+    border: 3px solid #333;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0.25rem;
+}
+.modal-close {
+    align-self: end;
+    padding: 1rem;
+}
+.modal-content {
+    align-self: center;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-top: -0.25rem;
+    margin-bottom: 0.5rem;
+}
+
+/* 
+*  ----------  Interface
+*/
+#interface {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    color: #333;
+}
+.controls-wrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+.home-button {
+    width: 3.25rem;
+    height: 3.25rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 1rem;
+    border: none;
+    border-radius: 99%;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+    pointer-events: all;
+    font-size: 1.25rem;
+}
+.interface-controls {
+    height: 3.25rem;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 30px;
+
+    /* glass effect */
+    background: rgba(255, 255, 255, 0.35);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(6.5px);
+    -webkit-backdrop-filter: blur(6.5px);
+    pointer-events: all;
+}
+.interface-controls button {
+    background-color: transparent;
+    width: 3.25rem;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 99%;
+    cursor: pointer;
+    font-size: 1.75rem;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+.interface-controls button:disabled {
+    transition: 0.2s ease;
+}
+.label {
+    width: 10rem;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-color: #dcdcdc;
+}
+.label-phase {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+}
+.label-phase-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    color: #848484;
+}
+.label-phase-content .active {
+    font-weight: 700;
+    color: #333;
+    transition-duration: 0.5s;
+}
+
+/* Sections */
+.section {
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+}
+
+/*
+ * Monitor - Projects
+ */
+.wrapper-monitor {
+    width: 1920px;
+    height: 1080px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.folder-closed {
+    margin-left: 100rem;
+    margin-top: 50rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.folder-icon {
+    width: 9rem;
+    height: 9rem;
+}
+
+/*
+* ---------- Window
+*/
+.window {
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    border-radius: 2.5rem;
+}
+.window--tob-bar {
+    width: 100%;
+    height: 7.5%;
+    border-radius: 2.5rem 2.5rem 0 0;
+    background-color: #333;
+}
+.window--tob-bar-circles {
+    width: 10%;
+    height: 100%;
+    margin-left: 1%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.window--tob-bar-circles .circle {
+    width: 25%;
+    height: 60%;
+    border-radius: 99%;
+}
+.window-content {
+    width: 100%;
+    height: 92.5%;
+    border-radius: 0 0 2.5rem 2.5rem;
+    display: flex;
+}
+
+/*
+* ---------- Loading Laptop
+*/
+#laptop {
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+}
+
+/*
+*   ---------- Projects Monitor
+*/
+#monitor {
+    width: 1920px;
+    height: 1080px;
+}
+.monitor-window-container {
+    width: 100%;
+    height: 100%;
+    margin-left: 2rem;
+}
+.window-sidebar {
+    width: 22.5%;
+    height: 100%;
+    border-radius: 0 0 0 2.5rem;
+    padding: 1.5rem;
+    background-color: #dddcdc;
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+.window-sidebar-title {
+    font-size: 2.5rem;
+    color: #727272;
+}
+.window-sidebar-list-item {
+    font-size: 2.7rem;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+.window-sidebar-list-item-selected {
+    background-color: #bfbfbf;
+}
+.window-content-main {
+    width: 77.5%;
+    padding: 5rem 5rem;
+    border-radius: 0 0 2.5rem 0;
+    flex-grow: 0;
+    flex-shrink: 0;
+    overflow: scroll;
+}
+.window-content-main-img-tag-wrapper {
+    width: 100%;
+    display: flex;
+}
+.window-content-main-img {
+    width: 55rem;
+}
+.window-content-main-img img {
+    width: 100%;
+    border-radius: 2rem;
+}
+.window-content-main-tags {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 3rem;
+}
+.window-content-main-tags li {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    color: #848484;
+}
+.window-content-main-tags li span {
+    margin-left: 0.75rem;
+    font-weight: 600;
+}
+.window-content-main-title {
+    margin-top: 3rem;
+    font-size: 4rem;
+}
+
+.window-content-main-description {
+    width: 100%;
+    margin-top: 1rem;
+    font-size: 2.5rem;
+    text-align: justify;
+}
+.window-content-main-buttons {
+    width: 100%;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+.window-content-main-buttons button {
+    border-radius: 1rem;
+}
+.window-content-main-buttons button a {
+    font-size: 2.2rem;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+.window-content-main-buttons button a span {
+    margin-left: 1rem;
+}
+.window-content-main-code {
+    color: #333;
+}
+.window-content-main-ref {
+    color: #f0f0f0;
+}
+
+/*
+*   ---------- Skills Tablet
+*/
+#tablet {
+    width: 1920px;
+    height: 1080px;
+    font-size: 10rem;
+}
+.skills-container {
+    height: 100%;
+}
+.skills-title {
+    margin: 0.3rem 0;
+    text-align: center;
+    font-size: 5rem;
+}
+.skills {
+    width: 100%;
+    height: 90%;
+    flex-wrap: wrap;
+}
+.skill {
+    width: 15.1rem;
+    height: 15.1rem;
+    margin: 2rem 1rem;
+    flex-direction: column;
+}
+.skill-icon {
+    width: 100%;
+    height: 100%;
+    border-radius: 3rem;
+    padding: 2rem;
+    background-color: white;
+}
+.ico {
+    width: 100%;
+    height: 100%;
+}
+.skill-name {
+    margin-top: 1rem;
+    font-size: 2.45rem;
+}
+
+#phone {
+    width: 1050px;
+    height: 1940px;
+    user-select: none;
+}
+.phone-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    font-size: 10rem;
+}
+.phone-notification {
+    width: 99%;
+    height: 12rem;
+    margin: 0 1rem 1.5rem 1rem;
+    background-color: rgba(0, 0, 0, 0.35);
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    color: #fefefe;
+    text-decoration: none;
+    cursor: pointer;
+}
+.phone-notification-icon {
+    width: 9rem;
+    height: 9rem;
+    margin: 2rem 1.5rem;
+}
+.phone-notification-icon i {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    font-size: 6rem;
+}
+.phone-notification-info {
+    width: calc(100% - 100px);
+    margin-left: 0.25rem;
+}
+.phone-notification-title {
+    font-size: larger;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+    font-size: 3rem;
+}
+.phone-notification-description {
+    font-weight: 400;
+    font-size: 2.5rem;
+}
+.phone-notification-description span {
+    font-weight: 600;
+}
+#phone-bar {
+    width: 50%;
+    height: 1.25rem;
+    margin-top: 4rem;
+    border-radius: 10rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
