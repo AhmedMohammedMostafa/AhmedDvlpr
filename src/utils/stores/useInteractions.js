@@ -45,10 +45,8 @@ export default create((set) => {
         /**
          * Experiences
          */
-        experiences: () => set({ phase: 'experiences' }),
 
         // Everis
-        everis: () => set({ phase: 'everis' }),
 
         /**
          * Contacts
