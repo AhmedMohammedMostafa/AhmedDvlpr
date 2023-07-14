@@ -101,7 +101,7 @@ const Interface = () => {
             duration: animationsTime,
             ease: 'sine'
         });
-    }, [activePhase, animationsTime]);
+    }, [activePhase]);
 
     return (
         <BrowserView>
