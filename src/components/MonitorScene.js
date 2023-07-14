@@ -29,7 +29,6 @@ const MonitorScene = (props) => {
     const screenMaterial = props.screenMaterial;
     const screenOffMaterial = props.screenOffMaterial;
     const screenRef = useRef();
-    const state = useInteractions((state) => state);
 
     /**
      * Mouse Enter
